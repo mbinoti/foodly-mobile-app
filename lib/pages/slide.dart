@@ -24,52 +24,62 @@ Widget imagem(BuildContext context) {
             child: Image.asset('assets/images/foodly.jpg'),
           ),
         ),
-        SizedBox(
-          width: 300,
-          height: 300,
+        const SizedBox(height: 10),
+        Container(
+          margin: const EdgeInsets.all(1.0),
+          constraints: const BoxConstraints(
+            minWidth: 0.0,
+            maxWidth: double.infinity,
+            minHeight: 0,
+            maxHeight: 350,
+          ),
+          height: 370,
+          width: double.infinity,
           child: ColorFiltered(
-            colorFilter: const ColorFilter.mode(
-              Color(0xffebff72),
-              BlendMode.modulate,
+            colorFilter:
+                const ColorFilter.mode(Color(0xffebff72), BlendMode.modulate),
+            child: Image.asset(
+              'assets/images/img11.jpg',
+              fit: BoxFit.fill,
             ),
-            child: Image.asset('assets/images/img1.jpg'),
           ),
         ),
-        const Column(
+        // ),
+        const SizedBox(height: 10),
+        Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Embark on a',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontFamily: 'Jost',
-                  fontSize: 30,
-                  color: Colors
-                      .black), // ajuste o tamanho do texto conforme necessário
-            ),
-            Text(
-              'Culinary',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontFamily: 'Jost',
-                  fontSize: 30,
-                  color: Colors
-                      .black), // ajuste o tamanho do texto conforme necessário
-            ),
-            Text(
-              'Adventure!',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontFamily: 'Jost',
-                  fontSize: 30,
-                  color: Colors
-                      .black), // ajuste o tamanho do texto conforme necessário
-            ),
+            circulo(context, Colors.black),
+            const SizedBox(width: 10),
+            circulo(context, Colors.white),
+            const SizedBox(width: 10),
+            circulo(context, Colors.white),
           ],
         ),
+        const SizedBox(height: 10),
+        const Text(
+          'Embark on a\nCulinary\nAdventure!',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Jost',
+            fontSize: 30,
+            height: 1.0,
+          ),
+        ),
+        const SizedBox(height: 10),
+        const Text(
+          'Indulge your cravings with Foodly,\nwhere every meal is an adventure in\nflavor.',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 8,
+            height: 1.1,
+          ),
+        ),
+        const SizedBox(height: 30),
         SizedBox(
           width: 320,
-          height: 70,
+          height: 60,
           child: ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
@@ -85,4 +95,32 @@ Widget imagem(BuildContext context) {
       ],
     ),
   );
+}
+
+Widget circulo(BuildContext context, Color color) {
+  return Container(
+    width: 20.0,
+    height: 20.0,
+    decoration: BoxDecoration(
+      color: color, // Fundo branco
+      shape: BoxShape.circle, // Forma de círculo
+      border: Border.all(
+        // Borda preta
+        color: Colors.black,
+        width: 1.0,
+      ),
+    ),
+  );
+}
+
+class MyClipper extends CustomClipper<Rect> {
+  @override
+  Rect getClip(Size size) {
+    return Rect.fromLTWH(0, 0, size.width, size.height * 0.58);
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Rect> oldClipper) {
+    return false;
+  }
 }

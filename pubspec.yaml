@@ -27,4 +27,5 @@ flutter:
       fonts:
         - asset: assets/fonts/static/Jost-Regular.ttf
         - asset: assets/fonts/static/Jost-Thin.ttf
+        - asset: assets/fonts/static/Jost-Bold.ttf
           
