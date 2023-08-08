@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Slide extends StatelessWidget {
-  const Slide({super.key});
+class Page2 extends StatelessWidget {
+  const Page2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ Widget imagem(BuildContext context) {
           height: 100,
           child: ColorFiltered(
             colorFilter: const ColorFilter.mode(
-              Color(0xffebff72),
+              Colors.white,
               BlendMode.modulate,
             ),
             child: Image.asset('assets/images/foodly.jpg'),
@@ -36,10 +36,12 @@ Widget imagem(BuildContext context) {
           height: 370,
           width: double.infinity,
           child: ColorFiltered(
-            colorFilter:
-                const ColorFilter.mode(Color(0xffebff72), BlendMode.modulate),
+            colorFilter: const ColorFilter.mode(
+              Colors.white,
+              BlendMode.modulate,
+            ),
             child: Image.asset(
-              'assets/images/img11.jpg',
+              'assets/images/img22.jpg',
               fit: BoxFit.fill,
             ),
           ),
@@ -49,16 +51,16 @@ Widget imagem(BuildContext context) {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            circulo(context, Colors.black),
-            const SizedBox(width: 10),
             circulo(context, Colors.white),
+            const SizedBox(width: 10),
+            circulo(context, Colors.black),
             const SizedBox(width: 10),
             circulo(context, Colors.white),
           ],
         ),
         const SizedBox(height: 10),
         const Text(
-          'Embark on a\nCulinary\nAdventure!',
+          'Order Now\nand Savor the\nJoy!S',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontWeight: FontWeight.bold,

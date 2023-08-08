@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:foodly_mobile/pages/slide.dart';
+import 'package:foodly_mobile/pages/page1.dart';
+import 'package:foodly_mobile/pages/page2.dart';
 
 void main() {
   runApp(const MainApp());
@@ -13,14 +14,13 @@ class MainApp extends StatelessWidget {
     return SafeArea(
       child: MaterialApp(
         theme: ThemeData(
-          // primaryColor: const Color(0xffebff72),
-          // hintColor: const Color(0xffebff72),
-          scaffoldBackgroundColor: const Color(0xffebff72),
-          // primarySwatch: Colors.blue,
+          // scaffoldBackgroundColor: const Color.fromARGB(255, 117, 248, 232),
+          scaffoldBackgroundColor: Colors.white,
         ),
+        //
         debugShowCheckedModeBanner: false,
         home: const Scaffold(
-          body: Slide(),
+          body: Page1(),
         ),
       ),
     );
